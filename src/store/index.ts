@@ -13,6 +13,10 @@ export default new Vuex.Store({
       {title :"Anglais", start:"2021-09-13T13:00:00", end:"2021-09-13T15:50:00", color:'', affichage: {candidats:"653645", concours:"MP"}},
       {title :"Informatique", start:"2021-09-17T15:00:00", end:"2021-09-17T15:50:00", color:'', affichage: {candidats:"2512", concours:"MP"}},
       {title :"Mathématique2", start:"2021-09-17T08:00:00", end:"2021-09-17T13:50:00", color:'', affichage: {candidats:"2512", concours:"MP,PC"}},
+      {title :"Informatique", start:"2021-09-16T08:00:00", end:"2021-09-14T10:50:00", color:'', affichage: {candidats:"256", concours:"MP"}},
+      {title :"Anglais", start:"2021-09-16T14:00:00", end:"2021-09-16T17:50:00", color:'', affichage: {candidats:"653645", concours:"MP"}},
+      {title :"Informatique", start:"2021-09-16T16:00:00", end:"2021-09-16T15:50:00", color:'', affichage: {candidats:"2512", concours:"MP"}},
+      {title :"Mathématique2", start:"2021-09-16T08:00:00", end:"2021-09-16T13:50:00", color:'', affichage: {candidats:"2512", concours:"MP,PC"}},
   ]
 
   },

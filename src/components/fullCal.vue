@@ -11,16 +11,16 @@
               {{ event.event.title }}
             </p>
             <!-- Affichage de la date de l'heure de début et fin / rajoute un zero afin si besoin afin de faire des chiffres a deux décimales xx:xx -->
-            {{ new Date(event.event.start).getHours() }}:{{
-              new Date(event.event.start).getMinutes() > 10
-                ? new Date(event.event.start).getMinutes()
-                : new Date(event.event.start).getMinutes() + "0"
-            }}
-            {{ new Date(event.event.end).getHours() }}:{{
-              new Date(event.event.end).getMinutes() > 10
-                ? new Date(event.event.end).getMinutes()
-                : new Date(event.event.end).getMinutes() + "0"
-            }}
+              {{ new Date(event.event.start).getHours() }}:{{
+                new Date(event.event.start).getMinutes() > 10
+                  ? new Date(event.event.start).getMinutes()
+                  : new Date(event.event.start).getMinutes() + "0"
+              }}
+              {{ new Date(event.event.end).getHours() }}:{{
+                new Date(event.event.end).getMinutes() > 10
+                  ? new Date(event.event.end).getMinutes()
+                  : new Date(event.event.end).getMinutes() + "0"
+              }}
             <br />
             <!--  Affichage des descriptions du calendrier -->
             <div
@@ -114,6 +114,8 @@ export default class fullCal extends Vue {
     events: this.$props.event,
     weekends: false,
     eventTextColor: "white",
+    slotEventOverlap: false,
+    eventShortHeight: 3
   };
 
   popUpInfo() {
@@ -142,8 +144,10 @@ export default class fullCal extends Vue {
 }
 
 .full-calendar-inside-event-title {
-  margin: 0;
+  margin: 0 0 2px 0;
   padding: 0;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .fc-timegrid-event,
