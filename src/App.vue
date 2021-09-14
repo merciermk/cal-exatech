@@ -1,28 +1,34 @@
 <template>
   <div id="app">
-    <full-cal> </full-Cal>
+    <full-cal :event="calEvents" :calIsReady="calIsReady"></full-Cal>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import fullCal from "./components/fullCal.vue";
+import { getCalColor, colorEvent } from './utils/colorEvent'
 
 @Component({
   components: {
     fullCal,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  calEvents = this.$store.state.calendar
+  calIsReady = false 
+
+
+  
+  mounted() {
+    this.calEvents = getCalColor(colorEvent, this.calEvents)
+    console.log(this.calEvents)
+    this.calIsReady = true
+  }
+
+}
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
